@@ -56,28 +56,6 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<plugin>
-				<groupId>com.spotify</groupId>
-				<artifactId>docker-maven-plugin</artifactId>
-				<version>1.0.0</version>
-				<configuration>
-					<!--镜像名称-->
-					<imageName>wekj/eureka-server:0.0.1</imageName>
-					<!--基础镜像-->
-					<baseImage>java</baseImage>
-					<!--类似ENTRYPOINT指令-->
-					<entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
-					<resources>
-						<resource>
-							<targetPath>/</targetPath>
-							<!--target目录-->
-							<directory>${project.build.directory}</directory>
-							<!--需要复制的文件-->
-							<include>${project.build.finalName}.jar</include>
-						</resource>
-					</resources>
-				</configuration>
-			</plugin>
 		</plugins>
 	</build>
 
